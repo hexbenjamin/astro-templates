@@ -1,11 +1,10 @@
 ---
-import '@/styles/global.css';
+import "@/styles/global.css";
 
 interface Props {
-  pageTitle?: string;
-  containerClass?: string;
+  title?: string;
 }
-const { pageTitle = 'Astro', containerClass = '' } = Astro.props;
+const { title = "Astro" } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,11 +13,9 @@ const { pageTitle = 'Astro', containerClass = '' } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
   </head>
   <body>
-    <div class={containerClass}>
-      <slot />
-    </div>
+    <slot />
   </body>
 </html>
